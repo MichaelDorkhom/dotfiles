@@ -35,6 +35,9 @@ nnoremap <C-p> :Files<CR>
 let g:airline#extensions#branch#enabled = 1
 
 " Config for NERDtree
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd w
+
 map <C-o> :NERDTreeToggle<CR>
 let g:NERDTreeMapActivateNode="<Tab>"
 let g:NERDTreeMinimalUI = 1
