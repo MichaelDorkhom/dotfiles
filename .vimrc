@@ -41,6 +41,7 @@ autocmd VimEnter * wincmd w
 map <C-o> :NERDTreeToggle<CR>
 let g:NERDTreeMapActivateNode="<Tab>"
 let g:NERDTreeMinimalUI = 1
+let NERDTreeShowHidden=1
 
 " Config for coloscheme
 colorscheme gruvbox
@@ -50,3 +51,4 @@ let g:ag_working_path_mode="r"
 let g:ackprg = 'ag --vimgrep'
 
 nnoremap <C-f> :Ag<SPACE>
+nnoremap <C-d><C-f> :Ag <C-r><C-w>
