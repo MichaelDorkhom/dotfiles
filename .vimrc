@@ -12,6 +12,9 @@ nnoremap <C-k> <C-b>
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
+" Find and replace word under cursor
+nnoremap <C-f><C-r> :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 
