@@ -1,4 +1,7 @@
 :set number relativenumber
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Open vimrc
 nnoremap <leader>v :e ~/Documents/Repos/dotfiles/.vimrc<CR>
@@ -45,6 +48,24 @@ map <C-o> :NERDTreeToggle<CR>
 let g:NERDTreeMapActivateNode="<Tab>"
 let g:NERDTreeMinimalUI = 1
 let NERDTreeShowHidden=1
+let g:NERDTreeWinSize=45
+
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
 
 " Config for coloscheme
 colorscheme gruvbox
