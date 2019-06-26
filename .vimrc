@@ -15,6 +15,10 @@ nnoremap <C-k> <C-b>
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
+" Config to switch between buffers
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
 " Find and replace word under cursor
 nnoremap <C-f><C-r> :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
