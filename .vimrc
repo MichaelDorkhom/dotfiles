@@ -1,15 +1,18 @@
-:set number relativenumber
+set number relativenumber
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Space bar used for spaces
+nnoremap <space> i<space><esc>
 
 " Open vimrc
 nnoremap <leader>v :e ~/Documents/Repos/dotfiles/.vimrc<CR>
 nnoremap <leader>V :tabnew ~/Documents/Repos/dotfiles/.vimrc<CR>
 
 " Config to switch pages
-nnoremap <C-j> <C-f>
-nnoremap <C-k> <C-b>
+nnoremap <c-j> 5j
+nnoremap <c-k> 5k
 
 " Config to switch panes
 nnoremap <C-h> <C-W>h
@@ -20,7 +23,7 @@ nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :wri
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 
 " Find and replace word under cursor
-nnoremap <C-f><C-r> :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nnoremap <C-z><C-r> :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
@@ -78,5 +81,5 @@ colorscheme gruvbox
 let g:ag_working_path_mode="r"
 let g:ackprg = 'ag --vimgrep'
 
-nnoremap <C-f> :Ag<SPACE>
-nnoremap <C-d><C-f> :Ag <C-r><C-w>
+nnoremap <C-z> :Ag<SPACE>
+nnoremap <C-d><C-z> :Ag <C-r><C-w>
