@@ -49,6 +49,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -94,3 +95,18 @@ let g:ackprg = 'ag --vimgrep'
 
 nnoremap <C-z> :Ag<SPACE>
 nnoremap <C-d><C-z> :Ag <C-r><C-w>
+
+" Config for coc
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
