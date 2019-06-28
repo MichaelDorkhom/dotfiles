@@ -2,6 +2,7 @@
 | OS generated files |
 ----------------------
 *.swp
+ .DS_Store
 
 ----------------------
 | Logs and databases |
