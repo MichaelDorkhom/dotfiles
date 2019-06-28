@@ -6,6 +6,10 @@ set expandtab
 " Space bar used for spaces
 nnoremap <space> i<space><esc>
 
+" Enter used for blank lines
+nnoremap <enter> o<ESC>
+nnoremap <s-enter> O<ESC>
+
 " Open vimrc
 nnoremap <leader>v :e ~/Documents/Repos/dotfiles/.vimrc<CR>
 nnoremap <leader>V :tabnew ~/Documents/Repos/dotfiles/.vimrc<CR>
