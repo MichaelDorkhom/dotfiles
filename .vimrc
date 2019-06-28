@@ -4,6 +4,12 @@ set shiftwidth=4
 set expandtab
 set bs=2
 
+" Enable autocompletion
+set wildmode=longest,list,full
+
+" Automatically remove trailing spaces on save
+autocmd BufWritePre * %s/\s\+$//e
+
 " Space bar used for spaces
 nnoremap <space> i<space><esc>
 
