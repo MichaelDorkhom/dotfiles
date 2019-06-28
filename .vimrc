@@ -2,6 +2,7 @@ set number relativenumber
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set bs=2
 
 " Space bar used for spaces
 nnoremap <space> i<space><esc>
