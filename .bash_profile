@@ -6,5 +6,5 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
 
 # Edit dotfiles
-alias evimrc="vim ~/.vimrc"
-alias ebashprofile="vim ~/.bash_profile"
+alias evim="vim ~/.vimrc"
+alias ebash="vim ~/.bash_profile"
