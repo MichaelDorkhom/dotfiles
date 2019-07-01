@@ -1,8 +1,9 @@
 set number relativenumber
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set bs=2
+set autoindent
 
 " Enable autocompletion
 set wildmode=longest,list,full
@@ -50,6 +51,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'raimondi/delimitmate'
 
 call plug#end()
 
