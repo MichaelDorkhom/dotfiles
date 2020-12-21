@@ -26,10 +26,6 @@ nnoremap <leader>V :tabnew ~/Documents/Repos/dotfiles/.vimrc<CR>
 nnoremap <c-j> 5j
 nnoremap <c-k> 5k
 
-" Config to switch panes
-nnoremap <C-[> <C-W>h
-nnoremap <C-]> <C-W>l
-
 " Config to jump between the two most recent files
 nnoremap <C-b> <C-^>
 
