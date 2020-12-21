@@ -27,8 +27,11 @@ nnoremap <c-j> 5j
 nnoremap <c-k> 5k
 
 " Config to switch panes
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
+nnoremap <C-[> <C-W>h
+nnoremap <C-]> <C-W>l
+
+" Config to jump between the two most recent files
+nnoremap <C-b> <C-^>
 
 " Config to switch between buffers
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
@@ -49,14 +52,15 @@ Plug 'tpope/vim-surround'
 Plug 'leafgarland/typescript-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
-Plug 'rking/ag.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'raimondi/delimitmate'
 
 call plug#end()
 
-" Config for fuzzy search
+" Config for fzf
 nnoremap <C-p> :Files<CR>
+nnoremap <C-h> :History/<CR>
+nnoremap <C-f> :Rg<CR>
 
 " Config for statusline
 let g:airline#extensions#branch#enabled = 1
@@ -65,7 +69,7 @@ let g:airline#extensions#branch#enabled = 1
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd w
 
-map <C-o> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeMapActivateNode="<Tab>"
 let g:NERDTreeMinimalUI = 1
 let NERDTreeShowHidden=1
@@ -90,13 +94,6 @@ autocmd BufEnter * call SyncTree()
 
 " Config for coloscheme
 colorscheme gruvbox
-
-" Config for Ag search
-let g:ag_working_path_mode="r"
-let g:ackprg = 'ag --vimgrep'
-
-nnoremap <C-z> :Ag<SPACE>
-nnoremap <C-d><C-z> :Ag <C-r><C-w>
 
 " Config for coc
 inoremap <silent><expr> <c-space> coc#refresh()
